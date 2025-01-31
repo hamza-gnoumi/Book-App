@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5431/book_social_network
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+      database: postgresql
+      database_platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: gnam
+    password: gnam
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 5000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: a89642ce6e7f3f033e50b6457a8de740db2946a9c6db08c0c3713ba32f32f21f
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+  file:
+    upload:
+      photos-output-path: ./uploads
+
+server:
+  port: 8088
